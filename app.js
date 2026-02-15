@@ -1,7 +1,7 @@
 import express from 'express';
-app = express();
+const app = express();
 import './utils/dotenvHandler.js';
-import { error } from 'console';
+import { homeRouter } from './routes/homeRouter.js';
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -15,7 +15,7 @@ app.listen(PORT, (error) => {
     throw error
   };
 
-  console.log(`Express is listening at port $${PORT}`)
+  console.log(`Express is listening at port ${PORT}`)
 })
 
 app.use(homeRouter)
