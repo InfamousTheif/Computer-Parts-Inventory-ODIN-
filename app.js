@@ -1,0 +1,26 @@
+import express from 'express';
+app = express();
+import './utils/dotenvHandler.js';
+import { error } from 'console';
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended:true }));
+app.use(express.static('public'));
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, (error) => {
+  if(error) {
+    throw error
+  };
+
+  console.log(`Express is listening at port $${PORT}`)
+})
+
+app.use(homeRouter)
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(err.statusCode || 500).send(err.message || "Internal server error");
+})
