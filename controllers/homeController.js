@@ -1,5 +1,5 @@
 function renderIndex(req, res) {
-  const title = 'Inventory';
+  const title = 'Inq\'s Inventory';
   res.render('index', { 
     title
   });
