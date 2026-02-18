@@ -5,6 +5,33 @@
     <link rel="stylesheet" href="/homeStyles.css">
   </head>
   <body>
-    <h1>Inventory</h1>
+    <!-- Page header -->
+    <header class="inventory-header">
+      <h1 class="inventory-header__header" >Computer Inventory</h1>
+
+      <h2 class="inventory-header__category-header">Categories:</h2>
+      <div class="inventory-header__categories-div">
+        <a href="?filter=input" class="inventory-header__category-button">Input</a>
+        <a href="?filter=output" class="inventory-header__category-button">Output</a>
+        <a href="?filter=storage" class="inventory-header__category-button">Storage</a>
+        <a href="?filter=software" class="inventory-header__category-button">Software</a>
+      </div>
+    </header>
+
+    <!-- Page main content -->
+    <main class="inventory-content">
+      <div class="inventory-content__card-div">
+        <img class="inventory-content__card-img" src="/ps4controller.png">
+        <div class="inventory-content__info-div">
+          <p>Name: PS4 controller</p>
+          <p>Category: Input </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Page Footer -->
+     <footer>
+
+     </footer>
   </body>
 </html>

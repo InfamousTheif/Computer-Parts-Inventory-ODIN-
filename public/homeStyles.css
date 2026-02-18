@@ -1,9 +1,105 @@
-h1 {
-  text-align: center;
-  font-family: sans-serif;
-  color: green;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+a, a:link, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
 
 body {
-  background-color: black;
+  background-color: #353839;
+}
+
+.inventory-header {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.inventory-header__header {
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
+  font-size: 4rem;
+}
+
+.inventory-header__category-header {
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.inventory-header__categories-div {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+}
+
+.inventory-header__category-button {
+  width: 12rem;
+  height: 4rem;
+  font-family: sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding: 10px 5px;
+  /* border: 3px black solid;
+  border-radius: 20px; */
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.01s;
+}
+
+.inventory-header__category-button:hover {
+  background-color: #a1a1a1;
+}
+
+.inventory-content {
+  display: grid;
+  gap: 3.125rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.inventory-content__card-div {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: white;
+  border: 7px black solid;
+  padding-bottom: 20px;
+}
+
+.inventory-content__info-div {
+  font-family: sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 20px;
+  border-top: 7px black solid;
 }
