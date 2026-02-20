@@ -5,4 +5,11 @@ function renderIndex(req, res) {
   });
 }
 
-export { renderIndex }
+function renderAddForm(req, res) {
+  const title = "Add Items Form"
+  res.render('add-item-form', {
+    title
+  })
+}
+
+export { renderIndex, renderAddForm }

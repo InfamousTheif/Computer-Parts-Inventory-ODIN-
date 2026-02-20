@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <!-- Page header -->
+    <header class="inventory-header">
+      <h1 class="inventory-header__header" >Computer Inventory Form</h1>
+    </header>
+
+    <!-- Page main content -->
+    <main>
+      <div class="form-container__div">
+        <form class="form-container__form">
+          <div class="form-container__form-group-div">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="e.g. Keybaord" minlength="1" maxlength="20" required>
+          </div>
+
+          <div class="form-container__form-group-div">
+            <label for="category">Choose a category</label>
+            <select name="category" id="category">
+              <option value="input"> Input </option>
+              <option value="output"> Output </option>
+              <option value="software"> Software </option>
+              <option value="storage"> Storage device </option>
+            </select>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <!-- Page Footer -->
+     <footer>
+
+     </footer>
+  </body>
+</html>

@@ -4,4 +4,6 @@ import * as homeController from '../controllers/homeController.js';
 
 homeRouter.get("/", homeController.renderIndex);
 
+homeRouter.get("/addItem", homeController.renderAddForm)
+
 export { homeRouter }
