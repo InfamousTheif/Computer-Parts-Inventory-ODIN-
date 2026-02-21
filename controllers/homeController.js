@@ -10,7 +10,7 @@ async function renderIndex(req, res) {
 }
 
 function renderAddForm(req, res) {
-  const title = "Add Items Form"
+  const title = "Add Items Form";
   res.render('add-item-form', {
     title
   });
@@ -23,8 +23,8 @@ async function handleAddForm(req, res) {
 }
 
 function renderUpdateForm(req, res) {
-  const title = "Update Items Form"
-  const { Id } = req.query
+  const title = "Update Items Form";
+  const { Id } = req.query;
   res.render('update-item-form', {
     title,
     Id
@@ -38,4 +38,19 @@ async function handleUpdateForm(req, res) {
   res.redirect("/");
 }
 
-export { renderIndex, renderAddForm, handleAddForm, renderUpdateForm, handleUpdateForm }
+function renderDeleteForm(req, res) {
+  const title = "Delete Items Form";
+  const { Id } = req.query;
+  res.render('delete-item-form', {
+    title,
+    Id
+  });
+}
+
+async function handleDeleteForm(req, res) {
+  const { password } = req.body;
+  const { Id } = req.query || {};
+  await db.deleteItem(Id, password, res);
+}
+
+export { renderIndex, renderAddForm, handleAddForm, renderUpdateForm, handleUpdateForm, renderDeleteForm, handleDeleteForm }

@@ -12,4 +12,8 @@ homeRouter.get("/updateItem", homeController.renderUpdateForm)
 
 homeRouter.post("/updateItem", homeController.handleUpdateForm)
 
+homeRouter.get("/deleteItem", homeController.renderDeleteForm)
+
+homeRouter.post("/deleteItem", homeController.handleDeleteForm)
+
 export { homeRouter }
