@@ -13,7 +13,7 @@ function renderAddForm(req, res) {
   const title = "Add Items Form"
   res.render('add-item-form', {
     title
-  })
+  });
 }
 
 async function handleAddForm(req, res) {
@@ -22,4 +22,20 @@ async function handleAddForm(req, res) {
   res.redirect("/");
 }
 
-export { renderIndex, renderAddForm, handleAddForm }
+function renderUpdateForm(req, res) {
+  const title = "Update Items Form"
+  const { Id } = req.query
+  res.render('update-item-form', {
+    title,
+    Id
+  });
+}
+
+async function handleUpdateForm(req, res) {
+  const userPost = req.body || {};
+  const { Id } = req.query || {};
+  await db.updateItem(Id, userPost);
+  res.redirect("/");
+}
+
+export { renderIndex, renderAddForm, handleAddForm, renderUpdateForm, handleUpdateForm }

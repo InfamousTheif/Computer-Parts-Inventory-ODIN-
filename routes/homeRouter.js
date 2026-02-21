@@ -8,4 +8,8 @@ homeRouter.get("/addItem", homeController.renderAddForm)
 
 homeRouter.post("/addItem", homeController.handleAddForm)
 
+homeRouter.get("/updateItem", homeController.renderUpdateForm)
+
+homeRouter.post("/updateItem", homeController.handleUpdateForm)
+
 export { homeRouter }
