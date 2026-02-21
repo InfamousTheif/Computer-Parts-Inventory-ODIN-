@@ -18,59 +18,30 @@
       </div>
 
       <div class="inventory-header__add-div">
-        <a class="inventory-header__add-button">Add Item</a>
+        <a href="/addItem" class="inventory-header__add-button">Add Item</a>
       </div>
     </header>
 
     <!-- Page main content -->
     <main class="inventory-content">
-      <div class="inventory-content__card-div">
-        <img class="inventory-content__card-img" src="/ps4controller.png">
-        <div class="inventory-content__info-div">
-          <p style="margin-bottom: 10px;">Name: PS4 controller</p>
-          <p>Category: Input </p>
-        </div>
-        <div class="inventory-content__actions-div">
-          <a class="inventory-content__delete-button">Delete</a>
-          <a class="inventory-content__update-button">Update</a>
-        </div>
-      </div>
 
-      <div class="inventory-content__card-div">
-        <img class="inventory-content__card-img" src="/ps4controller.png">
-        <div class="inventory-content__info-div">
-          <p style="margin-bottom: 10px;">Name: PS4 controller</p>
-          <p>Category: Input </p>
+      <% for (let i = 0; i < items.length; i++) { %>
+      
+        <div class="inventory-content__card-div">
+          <img class="inventory-content__card-img" src="/images/komputer.png">
+          <div class="inventory-content__info-div">
+            <p>ID: <%= items[i].id %></p>
+            <p style="margin-bottom: 10px;">Name: <%= items[i].name %></p>
+            <p>Category: <%= items[i].category %> </p>
+          </div>
+          <div class="inventory-content__actions-div">
+            <a class="inventory-content__delete-button">Delete</a>
+            <a class="inventory-content__update-button">Update</a>
+          </div>
         </div>
-        <div class="inventory-content__actions-div">
-          <a class="inventory-content__delete-button">Delete</a>
-          <a class="inventory-content__update-button">Update</a>
-        </div>
-      </div>
 
-      <div class="inventory-content__card-div">
-        <img class="inventory-content__card-img" src="/ps4controller.png">
-        <div class="inventory-content__info-div">
-          <p style="margin-bottom: 10px;">Name: PS4 controller</p>
-          <p>Category: Input </p>
-        </div>
-        <div class="inventory-content__actions-div">
-          <a class="inventory-content__delete-button">Delete</a>
-          <a class="inventory-content__update-button">Update</a>
-        </div>
-      </div>
+      <% } %> 
 
-      <div class="inventory-content__card-div">
-        <img class="inventory-content__card-img" src="/ps4controller.png">
-        <div class="inventory-content__info-div">
-          <p style="margin-bottom: 10px;">Name: PS4 controller</p>
-          <p>Category: Input </p>
-        </div>
-        <div class="inventory-content__actions-div">
-          <a class="inventory-content__delete-button">Delete</a>
-          <a class="inventory-content__update-button">Update</a>
-        </div>
-      </div>
     </main>
 
     <!-- Page Footer -->
