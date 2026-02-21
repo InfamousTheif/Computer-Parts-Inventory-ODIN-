@@ -6,4 +6,6 @@ homeRouter.get("/", homeController.renderIndex);
 
 homeRouter.get("/addItem", homeController.renderAddForm)
 
+homeRouter.post("/addItem", homeController.handleAddForm)
+
 export { homeRouter }
