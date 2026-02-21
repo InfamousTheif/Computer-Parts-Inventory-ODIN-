@@ -12,15 +12,9 @@
 
     <!-- Page main content -->
     <main>
-      <div class="form-container__div">
-        <form class="form-container__form">
+      <div class="form-container__div delete-form-container__div">
+        <form method="POST" action="/deleteItem?Id=<%=Id%>" class="form-container__form">
           <h2>Delete Item Form</h2>
-
-          <div class="form-container__form-group-div">
-            <label for="id">Id:</label>
-            <input type="number" name="id" id="id" min="1" max="999" required>
-          </div>
-
           <div class="form-container__form-group-div">
             <label for="password">Password:</label>
             <input type="text" name="password" id="password" placeholder="123..." minlength="1" maxlength="20" required>
