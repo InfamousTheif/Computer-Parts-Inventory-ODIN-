@@ -15,4 +15,14 @@ async function updateItem(itemId, userPost) {
   await pool.query(`UPDATE items SET name = $1, category = $2 WHERE id = ${itemId}`, [name, category])
 }
 
-export { getItems, addItem, updateItem }
+async function deleteItem(itemId, password, res) {
+  if (password === 'hello123456?') {
+    await pool.query(`DELETE FROM items WHERE id = ${itemId}`);
+    res.redirect("/");
+  };
+  
+  res.status(401).sendFile("views/passwordError.html", {root: process.cwd()});
+  
+}
+
+export { getItems, addItem, updateItem, deleteItem }
