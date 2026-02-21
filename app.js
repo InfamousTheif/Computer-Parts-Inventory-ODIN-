@@ -20,6 +20,10 @@ app.listen(PORT, (error) => {
 
 app.use(homeRouter)
 
+app.use((req, res) => {
+  res.status(404).sendFile("/views/404.html", {root: import.meta.dirname});
+})
+
 app.use((err, req, res, next) => {
   console.log(err);
   res.status(err.statusCode || 500).send(err.message || "Internal server error");
