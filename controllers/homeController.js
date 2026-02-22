@@ -3,9 +3,11 @@ import * as db from "../db/queries.js";
 async function renderIndex(req, res) {
   const items = await db.getItems();
   const title = 'Inq\'s Inventory';
+  const { filter } = req.query;
   res.render('index', { 
     title,
-    items
+    items,
+    filter
   });
 }
 
