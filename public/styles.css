@@ -83,8 +83,8 @@ body {
 .inventory-content {
   display: grid;
   gap: 3.125rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-bottom: 50px;
 }
 
@@ -222,6 +222,12 @@ input[type=number]::-webkit-outer-spin-button {
 
   .inventory-content__card-div {
     max-width: 22rem;
+  }
+}
+
+@media screen and (width > 449px) {
+  .inventory-content {
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
   }
 }
 
