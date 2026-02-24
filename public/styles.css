@@ -173,7 +173,7 @@ body {
   border: 7px solid black;
   padding: 15px 20px;
   font-family: sans-serif;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .form-container__form-group-div {
@@ -223,7 +223,13 @@ input[type=number]::-webkit-outer-spin-button {
   .inventory-content__card-div {
     max-width: 22rem;
   }
+}
 
+@media screen and (width > 500px) {
+
+  .form-container__form {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (width > 570px) {
@@ -240,15 +246,17 @@ input[type=number]::-webkit-outer-spin-button {
   .inventory-content__info-div {
     font-size: 2rem;
   }
-
 }
 
 @media screen and (width > 700px) {
 
   .inventory-header__categories-div {
     gap: 2.5rem;
-  }  
-
+  }
+  
+  .form-container__form {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (width > 730px) {
@@ -261,7 +269,13 @@ input[type=number]::-webkit-outer-spin-button {
   /* .inventory-header__categories-div {
     gap: 2.5rem;
   }   */
+}
 
+@media screen and (width > 900px) {
+  
+  .form-container__form {
+    font-size: 3rem;
+  }
 }
 
 
