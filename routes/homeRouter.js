@@ -6,11 +6,11 @@ homeRouter.get("/", homeController.renderIndex);
 
 homeRouter.get("/addItem", homeController.renderAddForm)
 
-homeRouter.post("/addItem", homeController.handleAddForm)
+homeRouter.post("/addItem", homeController.validatPost, homeController.handleAddForm)
 
 homeRouter.get("/updateItem", homeController.renderUpdateForm)
 
-homeRouter.post("/updateItem", homeController.handleUpdateForm)
+homeRouter.post("/updateItem", homeController.validatPost, homeController.handleUpdateForm)
 
 homeRouter.get("/deleteItem", homeController.renderDeleteForm)
 

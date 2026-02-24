@@ -1,4 +1,5 @@
 import * as db from "../db/queries.js";
+import { body, validationResult, matchedData } from "express-validator";
 
 async function renderIndex(req, res) {
   const items = await db.getItems();
@@ -18,8 +19,23 @@ function renderAddForm(req, res) {
   });
 }
 
+// Data validation
+
+const nameLenErr = "Item name must be between 1 and 20 characters";
+const validCategories = ["input", "output", "software", "storage"];
+
+const validatPost = [
+  body("name").notEmpty().withMessage("Name is required").trim().isLength({ min:1, max:20 }).withMessage(nameLenErr),
+
+  body("category").notEmpty().withMessage("Category is required").isIn(validCategories).withMessage(`Value must be one of the following: ${validCategories.join(',')}`),
+]
+
 async function handleAddForm(req, res) {
-  const userPost = req.body;
+  const errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return
+  }
+  const userPost = matchedData(req);
   await db.addItem(userPost);
   res.redirect("/");
 }
@@ -34,7 +50,11 @@ function renderUpdateForm(req, res) {
 }
 
 async function handleUpdateForm(req, res) {
-  const userPost = req.body || {};
+  const errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return
+  }
+  const userPost = matchedData(req) || {};
   const { Id } = req.query || {};
   await db.updateItem(Id, userPost);
   res.redirect("/");
@@ -55,4 +75,4 @@ async function handleDeleteForm(req, res) {
   await db.deleteItem(Id, password, res);
 }
 
-export { renderIndex, renderAddForm, handleAddForm, renderUpdateForm, handleUpdateForm, renderDeleteForm, handleDeleteForm }
+export { renderIndex, renderAddForm, handleAddForm, renderUpdateForm, handleUpdateForm, renderDeleteForm, handleDeleteForm, validatPost }
