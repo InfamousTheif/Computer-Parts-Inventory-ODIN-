@@ -37,7 +37,9 @@ async function handleAddForm(req, res) {
   }
   const userPost = matchedData(req);
   await db.addItem(userPost);
-  res.redirect("/");
+  console.log(req.file);
+  console.log(req.body);
+  res.redirect("/")
 }
 
 function renderUpdateForm(req, res) {
