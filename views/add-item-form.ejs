@@ -15,8 +15,13 @@
     <!-- Page main content -->
     <main>
       <div class="form-container__div">
-        <form method="POST" action="/addItem" class="form-container__form">
+        <form method="POST" action="/addItem" class="form-container__form" enctype="multipart/form-data">
           <h2>Add Item Form</h2>
+
+          <div class="form-container__form-group-div">
+            <label style="margin: 0 auto;" for="image">Upload Image</label>
+            <input style="display: none;" type="file" name="image" id="image" required>
+          </div>
 
           <div class="form-container__form-group-div">
             <label for="name">Name:</label>
