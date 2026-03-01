@@ -6,6 +6,7 @@ import { homeRouter } from './routes/homeRouter.js';
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended:true }));
+app.use(express.static('user-images'));
 app.use(express.static('public'));
 
 const PORT = process.env.PORT || 3000;
@@ -26,5 +27,5 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
   console.log(err);
-  res.status(err.statusCode || 500).send(err.message || "Internal server error");
+  res.status(err.statusCode || 500)?.send(err.message || "Internal server error");
 })
