@@ -1,7 +1,7 @@
 import { Router } from "express";
 const homeRouter = Router();
 import * as homeController from '../controllers/homeController.js';
-import { upload } from "../controllers/multer.js";
+import { upload } from "../controllers/upload.js";
 
 homeRouter.get("/", homeController.renderIndex);
 
