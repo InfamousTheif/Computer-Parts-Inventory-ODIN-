@@ -5,14 +5,16 @@ async function getItems() {
   return rows;
 }
 
-async function addItem(userPost) {
+async function addItem(userPost, userImg) {
   const { name, category } = userPost;
-  await pool.query('INSERT INTO items (name, category) VALUES($1, $2)', [name, category])
+  const { filename, destination } = userImg;
+  await pool.query('INSERT INTO items (name, category, img_dest, img_name) VALUES($1, $2, $3, $4)', [name, category, destination, filename]);
 }
 
-async function updateItem(itemId, userPost) {
+async function updateItem(itemId, userPost, userImg) {
   const { name, category } = userPost;
-  await pool.query(`UPDATE items SET name = $1, category = $2 WHERE id = ${itemId}`, [name, category])
+  const { filename, destination } = userImg;
+  await pool.query(`UPDATE items SET name = $1, category = $2, img_dest = $3, img_name = $4 WHERE id = ${itemId}`, [name, category, destination, filename]);
 }
 
 async function deleteItem(itemId, password, res) {
