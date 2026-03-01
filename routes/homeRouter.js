@@ -11,7 +11,7 @@ homeRouter.post("/addItem", upload.single('image'), homeController.validatPost, 
 
 homeRouter.get("/updateItem", homeController.renderUpdateForm)
 
-homeRouter.post("/updateItem", homeController.validatPost, homeController.handleUpdateForm)
+homeRouter.post("/updateItem", upload.single('image'), homeController.validatPost, homeController.handleUpdateForm)
 
 homeRouter.get("/deleteItem", homeController.renderDeleteForm)
 
