@@ -1,4 +1,5 @@
 import { pool } from "./pool.js";
+import { deleteFile } from "../controllers/deleteImg.js";
 
 async function getItems() {
   const { rows } = await pool.query('SELECT * FROM items');
@@ -19,7 +20,10 @@ async function updateItem(itemId, userPost, userImg) {
 
 async function deleteItem(itemId, password, res) {
   if (password === 'hello123456?') {
-    await pool.query(`DELETE FROM items WHERE id = ${itemId}`);
+    const { rows } = await pool.query('SELECT * FROM items where id = $1', [itemId])
+    const { img_dest, img_name } = rows[0];
+    await deleteFile(img_dest, img_name);
+    await pool.query(`DELETE FROM items WHERE id = $1`, [itemId]);
     res.redirect("/");
   };
   
