@@ -196,6 +196,11 @@ label {
   font-weight: bold;
 }
 
+label > img {
+  cursor: pointer;
+  width: 100px;
+}
+
 input, select {
   width: 100%;
   padding: 5px 15px;
