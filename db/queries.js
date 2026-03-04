@@ -15,6 +15,9 @@ async function addItem(userPost, userImg) {
 async function updateItem(itemId, userPost, userImg) {
   const { name, category } = userPost;
   const { filename, destination } = userImg;
+  const { rows } = await pool.query('SELECT * FROM items where id = $1', [itemId])
+  const { img_dest, img_name } = rows[0];
+  await deleteFile(img_dest, img_name);
   await pool.query(`UPDATE items SET name = $1, category = $2, img_dest = $3, img_name = $4 WHERE id = ${itemId}`, [name, category, destination, filename]);
 }
 
