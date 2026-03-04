@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/styles.css">
+    <script src="/imageDisplay.js" defer></script>
   </head>
   <body>
     <!-- Page header -->
@@ -19,7 +20,7 @@
           <h2>Update Item Form</h2>
 
           <div class="form-container__form-group-div">
-            <label style="margin: 0 auto;" for="image"><img src="images/upload-image.webp"></label>
+            <label style="margin: 0 auto;" for="image"><img id="img-displayer" src="images/upload-image.webp"></label>
             <input style="display: none;" type="file" name="image" id="image" required>
           </div>
 
