@@ -1,2 +1,2 @@
-## Basic Iventory Site
+## Basic Inventory Site
 I'll add more info on the site at a later time
