@@ -199,6 +199,7 @@ label {
 label > img {
   cursor: pointer;
   max-width: 100px;
+  border: 5px solid black;
 }
 
 input, select {
