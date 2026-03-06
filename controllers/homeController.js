@@ -38,8 +38,6 @@ async function handleAddForm(req, res) {
   const userPost = matchedData(req);
   const userImg = req.file
   await db.addItem(userPost, userImg);
-  console.log(req.file);
-  console.log(req.body);
   res.redirect("/")
 }
 
@@ -61,8 +59,6 @@ async function handleUpdateForm(req, res) {
   const userImg = req.file;
   const { Id } = req.query || {};
   await db.updateItem(Id, userPost, userImg);
-  console.log(req.file);
-  console.log(req.body);
   res.redirect("/");
 }
 
