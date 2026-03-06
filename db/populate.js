@@ -18,12 +18,12 @@ INSERT INTO items (name, category, img_dest, img_name)
 async function populatedb() {
   console.log('seeding...');
 
+  if(!process.argv[2]) {
+    throw new Error("Missing database connection string");
+  }
+
   const client = new Client({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    database: process.env.DATABASE_DB,
-    password: process.env.DATABASE_PASS,
-    port: process.env.DATABASE_PORT
+    connectionString: process.argv[2]
   })
 
   try {
